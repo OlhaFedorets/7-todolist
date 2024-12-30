@@ -6,8 +6,17 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import {MenuButton} from "./MenuButton";
+import {Switch, useTheme} from "@mui/material";
 
-export default function ButtonAppBar() {
+type Props={
+    changeModeHandler:()=>void
+}
+
+export default function ButtonAppBar({changeModeHandler}: Props) {
+    const theme = useTheme();
+    console.log(theme)
+
     return (
         <Box sx={{ flexGrow: 1, marginBottom: 10}}>
             <AppBar position="fixed">
@@ -24,7 +33,10 @@ export default function ButtonAppBar() {
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         News
                     </Typography>
-                    <Button color="inherit">Login</Button>
+                    <MenuButton background={theme.palette.primary.dark} color="inherit">Login</MenuButton>
+                    <MenuButton color="inherit">Logout</MenuButton>
+                    <MenuButton color="inherit">Faq</MenuButton>
+                    <Switch color={'default'} onChange={changeModeHandler}/>
                 </Toolbar>
             </AppBar>
         </Box>
