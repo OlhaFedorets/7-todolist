@@ -140,7 +140,7 @@ function App() {
         }
     })
     const changeModeHandler = () => {
-        setThemeMode(themeMode == 'light' ? 'dark' : 'light')
+        setThemeMode(themeMode === 'light' ? 'dark' : 'light')
     }
 
 
