@@ -9,7 +9,7 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import { createTheme } from '@mui/material/styles';
 import {ThemeProvider} from "@mui/material/styles";
-import {CssBaseline} from "@mui/material";
+import {CssBaseline, Grid2} from "@mui/material";
 
 export type TaskType = {
     id: string
@@ -151,11 +151,11 @@ function App() {
                 <div className="App">
                     <ButtonAppBar changeModeHandler={changeModeHandler}/>
 
-                    <Grid container>
+                    <Grid2 container>
                         <AddItemForm addItem={addTodolist}/>
-                    </Grid>
+                    </Grid2>
 
-                    <Grid container sx={{mt: 2}}>
+                    <Grid2 container sx={{mt: 2}}>
                         {todolists.map((tl) => {
 
                             const allTodolistTasks = tasks[tl.id]
@@ -188,7 +188,7 @@ function App() {
                                 </Paper>
                             )
                         })}
-                    </Grid>
+                    </Grid2>
 
                 </div>
             </Container>
